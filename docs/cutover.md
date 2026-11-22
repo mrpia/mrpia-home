@@ -8,12 +8,20 @@ at Infomaniak; only the web records change.
 Reference: Firebase, "Connect a custom domain",
 https://firebase.google.com/docs/hosting/custom-domain
 
-**Status, 2026-11-22 evening:** both A records point at Firebase
-(199.36.158.100). `mrpia.ch` has its own certificate (Google Trust Services,
-valid to 2027-02-20). `www.mrpia.ch` still gets Firebase's generic
-`*.firebaseapp.com` certificate, so HTTPS on `www` fails until Firebase issues
-one; step 6 and the console's status for `www.mrpia.ch` are what to check.
-Mail records unchanged.
+**Status: done, 2026-11-22.** Both A records point at Firebase
+(199.36.158.100). `mrpia.ch` and `www.mrpia.ch` each have their own Google
+Trust Services certificate (valid to 2027-02-20; Firebase renews them).
+`www` redirects to `https://mrpia.ch` with the path and query kept. Mail
+records unchanged.
+
+Two things learned on the way:
+
+- DNS alone doesn't connect `www`. With the A and TXT records in place but
+  `www.mrpia.ch` not yet added in the console, Firebase answered "Site Not
+  Found" (404) and kept its generic `*.firebaseapp.com` certificate. Adding the
+  domain in the console (step 6) fixed it.
+- A new certificate reaches Firebase's edge servers over a few minutes; for a
+  short while some requests still get the generic one.
 
 ## Why "Advanced setup"
 
