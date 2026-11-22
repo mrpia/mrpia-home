@@ -1,0 +1,8 @@
+# Firebase CLI deploy cache and logs
+.firebase/
+firebase-debug.log*
+# Local tooling
+node_modules/
+.playwright-mcp/
+test-results/
+.DS_Store

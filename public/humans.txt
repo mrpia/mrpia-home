@@ -1,0 +1,9 @@
+/* TEAM */
+Owner: mrpia
+Contact: info [at] mrpia.ch
+Code: https://github.com/mrpia
+
+/* SITE */
+Standards: HTML, CSS, a little JavaScript. No build step, no framework.
+Third parties: none. No cookies, no analytics, no fonts or scripts from other hosts.
+Source: https://github.com/mrpia/mrpia-home

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mrpia.ch</title>
+<meta name="description" content="mrpia: software geek, hacking my way through photography, guitar and raising kids. Small tools and games, built as life goes on.">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0f141b">
+<link rel="canonical" href="https://mrpia.ch/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mrpia.ch/">
+<meta property="og:title" content="mrpia.ch">
+<meta property="og:description" content="Software geek, hacking my way through photography, guitar and raising kids. Small tools and games, built as life goes on.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+<script src="/theme.js"></script>
+<script src="/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#stuff">Skip to projects</a>
+
+<main class="term">
+  <header class="term-bar">
+    <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="term-title">guest@mrpia: ~</span>
+    <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme" title="theme">◐</button>
+  </header>
+
+  <div class="term-body" id="term">
+    <p class="motd dim">Last login: <span id="last-login">just now</span> on ttys000<br>
+      Welcome to mrpia.ch. Scroll down, or type <kbd>help</kbd> at the prompt.</p>
+
+    <section id="whoami" aria-labelledby="h-whoami">
+      <h1 id="h-whoami" class="cmd"><span class="ps1" aria-hidden="true"><b>guest@mrpia</b>:<i>~</i>$ </span>whoami</h1>
+      <div class="out">
+        <p class="name">mrpia <span aria-hidden="true">🤓</span></p>
+        <p>Software geek, hacking my way through new skills: photography, guitar, raising kids.</p>
+        <p>I also build tools as life goes on. Got an idea for the next one? <a href="mailto:info@mrpia.ch">Send it over</a>.</p>
+      </div>
+    </section>
+
+    <section id="stuff" aria-labelledby="h-stuff">
+      <h2 id="h-stuff" class="cmd"><span class="ps1" aria-hidden="true"><b>guest@mrpia</b>:<i>~</i>$ </span>ls -l ~/stuff</h2>
+      <p class="out dim" aria-hidden="true">total 4</p>
+      <ul class="cards">
+        <li class="card" data-name="math-quizz">
+          <p class="perm" aria-hidden="true">drwxr-xr-x  mrpia  2026-05-09</p>
+          <h3><a class="play" href="https://math-quizz.mrpia.ch/">math-quizz/</a></h3>
+          <p class="blurb">Timed mental-math drills, × and ÷, for kids who already know their tables and want the answers to come without thinking. Built to help our little ones with those pesky multiplication tables.</p>
+          <ul class="tags" aria-label="tags"><li>react</li><li>typescript</li><li>fr·de·en</li><li>no-tracking</li></ul>
+          <p class="links"><a class="play" href="https://math-quizz.mrpia.ch/">▶ play</a><a class="src" href="https://github.com/mrpia/math-quizz">&lt;/&gt; source</a></p>
+        </li>
+        <li class="card" data-name="geo-quizz">
+          <p class="perm" aria-hidden="true">drwxr-xr-x  mrpia  2026-11-21</p>
+          <h3><a class="play" href="https://geo-quizz.mrpia.ch/">geo-quizz/</a></h3>
+          <p class="blurb">A 3D globe with every border and no names. The game names a country, you have 10 seconds to tap it. Explore mode lets you learn a continent first.</p>
+          <ul class="tags" aria-label="tags"><li>react</li><li>globe.gl</li><li>fr·de·en</li><li>touch-or-mouse</li></ul>
+          <p class="links"><a class="play" href="https://geo-quizz.mrpia.ch/">▶ play</a><a class="src" href="https://github.com/mrpia/geo-quizz">&lt;/&gt; source</a></p>
+        </li>
+        <li class="card" data-name="arena-race">
+          <p class="perm" aria-hidden="true">drwxr-xr-x  mrpia  2026-11-03</p>
+          <h3><a class="play" href="https://arena-race.mrpia.ch/">arena-race/</a></h3>
+          <p class="blurb">A race car game for one or two players on one keyboard. Three laps on a Formula 1 track or a figure 8 with a bridge. Brake, drift, leave skid marks.</p>
+          <ul class="tags" aria-label="tags"><li>typescript</li><li>three.js</li><li>made-with-kids</li><li>keyboard</li></ul>
+          <p class="links"><a class="play" href="https://arena-race.mrpia.ch/">▶ play</a><a class="src" href="https://github.com/mrpia/arena-race">&lt;/&gt; source</a></p>
+        </li>
+        <li class="card" data-name="arena-maze">
+          <p class="perm" aria-hidden="true">drwxr-xr-x  mrpia  2026-11-13</p>
+          <h3><a class="play" href="https://arena-maze.mrpia.ch/">arena-maze/</a></h3>
+          <p class="blurb">Two players, one keyboard, a new labyrinth every round. Monsters chase whatever they can see. Fight them off together with lightning, fire and ice.</p>
+          <ul class="tags" aria-label="tags"><li>typescript</li><li>canvas-2d</li><li>made-with-kids</li><li>keyboard</li></ul>
+          <p class="links"><a class="play" href="https://arena-maze.mrpia.ch/">▶ play</a><a class="src" href="https://github.com/mrpia/arena-maze">&lt;/&gt; source</a></p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="cv" aria-labelledby="h-cv">
+      <h2 id="h-cv" class="cmd"><span class="ps1" aria-hidden="true"><b>guest@mrpia</b>:<i>~</i>$ </span>cat cv.md</h2>
+      <div class="out">
+        <p><span class="err">cat: cv.md: still compiling…</span></p>
+        <p class="dim">Until it builds, <a href="https://linkedin.com/in/pgaliana" rel="me">LinkedIn</a> has the long version.</p>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="h-contact">
+      <h2 id="h-contact" class="cmd"><span class="ps1" aria-hidden="true"><b>guest@mrpia</b>:<i>~</i>$ </span>cat ~/.contact</h2>
+      <dl class="out kv">
+        <dt>mail</dt><dd><a href="mailto:info@mrpia.ch">info@mrpia.ch</a> <span class="dim"># your next tool idea goes here</span></dd>
+        <dt>code</dt><dd><a href="https://github.com/mrpia" rel="me">github.com/mrpia</a></dd>
+        <dt>work</dt><dd><a href="https://linkedin.com/in/pgaliana" rel="me">linkedin.com/in/pgaliana</a></dd>
+        <dt>coffee</dt><dd><a href="https://buymeacoffee.com/mrpia">buymeacoffee.com/mrpia</a> <span class="dim"># always appreciated 💖</span></dd>
+      </dl>
+    </section>
+
+    <div id="session" aria-live="polite"></div>
+
+    <form id="prompt" class="cmd prompt" autocomplete="off">
+      <span class="ps1" aria-hidden="true"><b>guest@mrpia</b>:<i>~</i>$ </span>
+      <span class="field"><input id="cmd" name="cmd" type="text" placeholder=" " spellcheck="false" autocapitalize="off" autocorrect="off" enterkeyhint="go" aria-label="Command line. Type help and press Enter."></span>
+    </form>
+    <p class="cmd nojs-prompt" aria-hidden="true"><span class="ps1"><b>guest@mrpia</b>:<i>~</i>$ </span><span class="cursor">█</span></p>
+  </div>
+</main>
+
+<footer class="foot">
+  <p>© 2026 mrpia · <a href="https://github.com/mrpia/mrpia-home">source</a> · plain HTML &amp; CSS · no cookies, no trackers</p>
+</footer>
+</body>
+</html>
