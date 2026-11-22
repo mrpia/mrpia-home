@@ -145,7 +145,13 @@ kbd { font: inherit; color: var(--yellow); border: 1px solid var(--line); border
   letter-spacing: -.02em;
   color: var(--green);
   text-shadow: var(--glow);
-  margin: .1em 0 .35em !important;
+  margin: .1em 0 0 !important;
+}
+.realname {
+  font-size: clamp(17px, 3.2vw, 22px);
+  font-weight: 600;
+  color: var(--fg);
+  margin: 0 0 .7em !important;
 }
 
 /* ---------- project cards ---------- */
@@ -165,11 +171,11 @@ kbd { font: inherit; color: var(--yellow); border: 1px solid var(--line); border
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 14px 16px 12px;
-  transition: border-color .2s, transform .2s, box-shadow .2s;
+  transition: border-color .2s, box-shadow .2s;
 }
+/* Highlight only, no lift: a terminal doesn't move things around. */
 .card:hover, .card:focus-within {
   border-color: color-mix(in srgb, var(--green) 55%, var(--line));
-  transform: translateY(-2px);
   box-shadow: 0 10px 30px -18px color-mix(in srgb, var(--green) 60%, transparent);
 }
 .card h3 { font-size: 18px; margin: .1em 0 .3em; }
@@ -259,7 +265,6 @@ kbd { font: inherit; color: var(--yellow); border: 1px solid var(--line); border
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .card:hover, .card:focus-within { transform: none; }
 }
 
 /* ---------- small screens ---------- */

@@ -8,6 +8,13 @@ at Infomaniak; only the web records change.
 Reference: Firebase, "Connect a custom domain",
 https://firebase.google.com/docs/hosting/custom-domain
 
+**Status, 2026-11-22 evening:** both A records point at Firebase
+(199.36.158.100). `mrpia.ch` has its own certificate (Google Trust Services,
+valid to 2027-02-20). `www.mrpia.ch` still gets Firebase's generic
+`*.firebaseapp.com` certificate, so HTTPS on `www` fails until Firebase issues
+one; step 6 and the console's status for `www.mrpia.ch` are what to check.
+Mail records unchanged.
+
 ## Why "Advanced setup"
 
 The old site sends `Strict-Transport-Security: max-age=31536000`. Any browser
@@ -33,7 +40,7 @@ These records serve mail and the other apps. Leave them exactly as they are:
 | `autodiscover`, `autoconfig` | CNAME | `infomaniak.com.` |
 | `mail`, `webmail` | A / CNAME | Infomaniak |
 | `math-quizz` | CNAME | `modern-ally-102412.web.app.` |
-| `geo-quizz` | CNAME + TXT | `geo-quizz-mrpia.web.app.` |
+| `geo-quizz` | CNAME | `geo-quizz-mrpia.web.app.` |
 | `arena-race` | CNAME | `arena-race.web.app.` |
 | `arena-maze` | CNAME | `arena-maze.web.app.` |
 
