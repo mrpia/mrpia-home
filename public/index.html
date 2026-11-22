@@ -12,6 +12,13 @@
 <meta property="og:url" content="https://mrpia.ch/">
 <meta property="og:title" content="mrpia.ch">
 <meta property="og:description" content="Software geek, hacking my way through photography, guitar and raising kids. Small tools and games, built as life goes on.">
+<meta property="og:site_name" content="mrpia.ch">
+<meta property="og:image" content="https://mrpia.ch/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A terminal window. whoami prints mrpia with a nerd-face emoji; ls ~/stuff lists math-quizz, geo-quizz, arena-race, arena-maze and arena-starter.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
 <script src="/theme.js"></script>
@@ -42,7 +49,7 @@
 
     <section id="stuff" aria-labelledby="h-stuff">
       <h2 id="h-stuff" class="cmd"><span class="ps1" aria-hidden="true"><b>guest@mrpia</b>:<i>~</i>$ </span>ls -l ~/stuff</h2>
-      <p class="out dim" aria-hidden="true">total 4</p>
+      <p class="out dim" aria-hidden="true">total 5</p>
       <ul class="cards">
         <li class="card" data-name="math-quizz">
           <p class="perm" aria-hidden="true">drwxr-xr-x  mrpia  2026-05-09</p>
@@ -71,6 +78,14 @@
           <p class="blurb">Two players, one keyboard, a new labyrinth every round. Monsters chase whatever they can see. Fight them off together with lightning, fire and ice.</p>
           <ul class="tags" aria-label="tags"><li>typescript</li><li>canvas-2d</li><li>made-with-kids</li><li>keyboard</li></ul>
           <p class="links"><a class="play" href="https://arena-maze.mrpia.ch/">▶ play</a><a class="src" href="https://github.com/mrpia/arena-maze">&lt;/&gt; source</a></p>
+        </li>
+        <li class="card" data-name="arena-starter">
+          <p class="perm" aria-hidden="true">drwxr-xr-x  mrpia  2026-11-03</p>
+          <h3><a class="src" href="https://github.com/mrpia/arena-starter">arena-starter/</a></h3>
+          <p class="blurb">A starting point for two-player games on one keyboard: two characters in an arena, and a hop key waiting to become whatever the game needs. arena-race and arena-maze both grew out of it.</p>
+          <ul class="tags" aria-label="tags"><li>typescript</li><li>canvas-2d</li><li>vite</li><li>no-framework</li></ul>
+          <p class="run"><span class="dim" aria-hidden="true">$ </span><code>npm install &amp;&amp; npm run dev</code></p>
+          <p class="links"><a class="src" href="https://github.com/mrpia/arena-starter">&lt;/&gt; source</a><span class="dim"># not hosted, runs locally</span></p>
         </li>
       </ul>
     </section>

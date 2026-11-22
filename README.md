@@ -18,12 +18,15 @@ away.
 | `public/theme.js` | Applies a saved theme before first paint, so it never flashes. |
 | `public/app.js` | The prompt: `help`, `ls`, `open <name>`, `src <name>`, `cv`, `contact`, `theme`, `clear`/`reset`, Tab completion, ↑/↓ history. |
 | `public/404.html`, `404.js` | The not-found page (`bash: cd: /path: No such file or directory`). |
+| `public/og.png` | The link preview image (1200×630), generated from `tools/og-image.html`. |
+| `tools/og-image.html` | Source of `og.png`. Not deployed. |
 | `firebase.json` | Hosting config: clean URLs, response headers. |
 | `docs/cutover.md` | Moving mrpia.ch from Infomaniak's page builder to this site. |
 
 The prompt reads the project cards, the bio, the CV stub and the contact list
 from the page itself. To add a project, copy a card in `index.html`; `ls`,
-`open` and Tab completion pick it up.
+`open` and Tab completion pick it up. A card without an `a.play` link, like
+arena-starter, counts as source-only: `open` explains that and opens GitHub.
 
 ## Run locally
 
@@ -34,6 +37,22 @@ firebase serve --only hosting --port 5055
 This applies `firebase.json`, so the CSP header and the 404 page behave as they
 do in production. `python3 -m http.server -d public` works too, but skips the
 headers.
+
+## Link preview image
+
+`index.html` points `og:image` at `https://mrpia.ch/og.png`. Social apps
+need a PNG or JPEG there; SVG doesn't work. After changing
+`tools/og-image.html` (say, a new project in the `ls` line), render it again:
+
+```sh
+npx --yes playwright@1.65.1 screenshot --viewport-size="1200, 630" \
+  "file://$PWD/tools/og-image.html" public/og.png
+```
+
+It needs Playwright's Chromium (`npx playwright@1.65.1 install chromium` once)
+and the DejaVu Sans Mono and Noto Color Emoji fonts; other fonts render, but
+the layout was tuned for these. Apps cache the previews they fetch; LinkedIn's
+[Post Inspector](https://www.linkedin.com/post-inspector/) makes it fetch again.
 
 ## Headers
 

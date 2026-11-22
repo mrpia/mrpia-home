@@ -53,6 +53,13 @@
     window.open(url, '_blank', 'noopener');
   };
 
+  // A project without a play link (arena-starter) only lives on GitHub.
+  const launch = (p) => {
+    if (p.play) return open(p.play);
+    print(`${p.name} is a starter kit, not a hosted game. here is its source:`, 'dim');
+    open(p.src);
+  };
+
   // ---------- data read from the page ----------
 
   const projects = [...document.querySelectorAll('.card[data-name]')].map((card) => ({
@@ -116,23 +123,23 @@
     whoami() { reprint('#whoami .out'); },
     ls(args) {
       if (args.some((a) => a.startsWith('-') && a.includes('l'))) {
-        projects.forEach((p) => print([link(p.play, p.name + '/'), '  ', el('span', 'dim', p.blurb)]));
+        projects.forEach((p) => print([link(p.play || p.src, p.name + '/'), '  ', el('span', 'dim', p.blurb)]));
       } else {
         const parts = [];
-        projects.forEach((p, i) => parts.push(i ? '  ' : '', link(p.play, p.name + '/')));
+        projects.forEach((p, i) => parts.push(i ? '  ' : '', link(p.play || p.src, p.name + '/')));
         print(parts);
       }
     },
     open([name]) {
       if (!name) return print('usage: open <name>   (try: ls)');
       const p = project(name, 'open');
-      if (p) open(p.play);
+      if (p) launch(p);
     },
     cd([dir]) {
       if (!dir || dir === '~' || dir === '/' || dir === '..') return print('you are already home.', 'dim');
       if (dir === 'stuff' || dir === '~/stuff') return commands.ls(['-l']);
       const p = project(dir, 'bash: cd');
-      if (p) open(p.play);
+      if (p) launch(p);
     },
     src([name]) {
       if (!name) return open('https://github.com/mrpia/mrpia-home');
